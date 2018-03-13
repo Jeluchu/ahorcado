@@ -37,12 +37,13 @@ FILE* abrir_archivo(FILE *F_archivo, char* p_nombre_archivo, char* modo)
     return(F_archivo);
 
 }
-int n_palabras()
-{
+
+int n_palabras(){
+
     char buffer[200];
     int contador=0;
 
-    F_palabras=abrir_archivo(F_palabras, archivo_ahorcado,"rt");
+    F_palabras = abrir_archivo(F_palabras, archivo_ahorcado,"rt");
 
     while(fgets(buffer, 200, F_palabras))
     {
@@ -54,8 +55,9 @@ int n_palabras()
     return(contador);
 
 }
-void obten_palabra()
-{
+
+void obten_palabra(){
+
     char buffer[200];
     int total_palabras;
     total_palabras=n_palabras();
@@ -87,12 +89,15 @@ void obten_palabra()
     fclose(F_palabras);
 
 }
-void jugar()
-{
+
+void jugar(){
+
   printf("PRÓXIMAMENTE\n");
+
 }
-void introduce()
-{
+
+void introduce(){
+
     char nueva_palabra[30];
     char buffer[30];
     int opcion, encontrado=0, salir;
@@ -108,7 +113,7 @@ void introduce()
             scanf("%s", nueva_palabra);
             printf("La palabra que quieres introducir es: %s \n",nueva_palabra);
             printf("Pulsa 1 si es correcta\n");
-            scanf("%d",&opcion);
+            scanf("%i",&opcion);
             if(opcion==1)
             {
                 F_palabras=abrir_archivo(F_palabras, archivo_ahorcado, "rt");
@@ -133,8 +138,8 @@ void introduce()
     fclose(F_palabras);
 }
 
-void instrucciones()
-{
+void instrucciones(){
+
     char buffer[100];
     char archivo_instrucciones[100]="./instrucciones/instrucciones.txt";
     FILE *f_instrucciones;
@@ -148,21 +153,24 @@ void instrucciones()
 }
 
 
+int main(){
 
-int main()
-{
     int opcion;
 
-    printf("|||||||||||||||||||||||||||||||||||||||||||||||\n");
-    printf("||||||||||||" "Juego del ahorcado" "|||||||||||||||||\n");
-    printf("|||||||||||||||||||||||||||||||||||||||||||||||\n");
-
-    printf("Pulsa 1 para jugar\n");
-    printf("Pulsa 2 para introducir nuevas palabras al programa\n");
-    printf("Pulsa 3 para ver las instrucciones\n");
-    printf("Pulsa 0 para salir\n");
-    printf("Introduce la opción deseada: ");
-    scanf("%d",&opcion);
+    system("toilet -fpagga AHORCADO");
+    printf(
+    "┏-------------------------------------------------------┓\n"
+    "|"VERDE "          ¿Qué operación deseas realizar?" NORMAL     "              |\n"
+    "┠-------------------------------------------------------┫\n"
+    "|" NEGRITA "       Pulsa 1 " NORMAL "para jugar                              |\n"
+    "|" NEGRITA "       Pulsa 2 " NORMAL "para introducir nuevas palabras         |\n"
+    "|" NEGRITA "       Pulsa 3 " NORMAL "para ver las instrucciones              |\n"
+    "|" NEGRITA "       Pulsa 0 " NORMAL "para salir                              |\n"
+    "+-------------------------------------------------------┛\n");
+    printf(AZUL "        Escoge la opción deseada: " NORMAL);
+    scanf("%i", &opcion);
+    while(getchar()!='\n');
+    printf("+---------------------------------------------------------------------+\n");
 
     switch (opcion) {
       case 1:
@@ -180,4 +188,5 @@ int main()
       case 0:
         return EXIT_SUCCESS;
       break;
+    }
 }
