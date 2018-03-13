@@ -111,7 +111,7 @@ void introduce(){
             encontrado=0;
             printf("Escriba salir para terminar de introducir palabras\n");
             scanf("%s", nueva_palabra);
-            printf("La palabra que quieres introducir es: %s \n",nueva_palabra);
+            printf("La palabra que quieres introducir es: %s \n", nueva_palabra);
             printf("Pulsa 1 si es correcta\n");
             scanf("%i",&opcion);
             if(opcion==1)
@@ -123,7 +123,6 @@ void introduce(){
                     {
                         printf("Esta palabra se ha guardado correctamente\n");
                         encontrado=1;
-
                     }
                 }
                 fclose(F_palabras);
@@ -157,20 +156,22 @@ int main(){
 
     int opcion;
 
+    system("clear");
     system("toilet -fpagga AHORCADO");
+    printf("\n\n");
     printf(
-    "┏-------------------------------------------------------┓\n"
-    "|"VERDE "          ¿Qué operación deseas realizar?" NORMAL     "              |\n"
-    "┠-------------------------------------------------------┫\n"
-    "|" NEGRITA "       Pulsa 1 " NORMAL "para jugar                              |\n"
-    "|" NEGRITA "       Pulsa 2 " NORMAL "para introducir nuevas palabras         |\n"
-    "|" NEGRITA "       Pulsa 3 " NORMAL "para ver las instrucciones              |\n"
-    "|" NEGRITA "       Pulsa 0 " NORMAL "para salir                              |\n"
-    "+-------------------------------------------------------┛\n");
+    "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n"
+    "┃"VERDE "          ¿Qué operación deseas realizar?" NORMAL     "        ┃\n"
+    "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫\n"
+    "┃" NEGRITA "       Pulsa 1 " NORMAL "para jugar                        ┃\n"
+    "┃" NEGRITA "       Pulsa 2 " NORMAL "para introducir nuevas palabras   ┃\n"
+    "┃" NEGRITA "       Pulsa 3 " NORMAL "para ver las instrucciones        ┃\n"
+    "┃" NEGRITA "       Pulsa 0 " NORMAL "para salir                        ┃\n"
+    "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n");
     printf(AZUL "        Escoge la opción deseada: " NORMAL);
     scanf("%i", &opcion);
     while(getchar()!='\n');
-    printf("+---------------------------------------------------------------------+\n");
+
 
     switch (opcion) {
       case 1:
